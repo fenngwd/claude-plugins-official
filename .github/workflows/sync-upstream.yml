@@ -1,0 +1,79 @@
+name: Sync upstream & strip git-subdir
+
+on:
+  schedule:
+    - cron: "0 */6 * * *" # every 6 hours
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Configure git
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+      - name: Save workflow file
+        run: cp .github/workflows/sync-upstream.yml /tmp/sync-upstream.yml
+
+      - name: Fetch & reset to upstream
+        run: |
+          git remote add upstream https://github.com/anthropics/claude-plugins-official.git || true
+          git fetch upstream
+          git reset --hard upstream/main
+
+      - name: Restore workflow file
+        run: |
+          mkdir -p .github/workflows
+          cp /tmp/sync-upstream.yml .github/workflows/sync-upstream.yml
+
+      - name: Patch marketplace.json
+        run: |
+          python3 -c "
+          import json, sys
+
+          path = '.claude-plugin/marketplace.json'
+          with open(path) as f:
+              data = json.load(f)
+
+          # Rename to avoid reserved name check
+          data['name'] = 'cc-plugins-compat'
+          data['description'] = 'Community-maintained fork with git-subdir plugins stripped for older CLI versions'
+
+          before = len(data['plugins'])
+          kept = []
+          removed = []
+          for p in data['plugins']:
+              src = p.get('source')
+              if isinstance(src, dict) and src.get('source') == 'git-subdir':
+                  removed.append(p['name'])
+              else:
+                  kept.append(p)
+          data['plugins'] = kept
+
+          with open(path, 'w') as f:
+              json.dump(data, f, indent=2, ensure_ascii=False)
+              f.write('\n')
+
+          print(f'{before} -> {len(kept)} plugins, stripped {len(removed)}')
+          for n in removed:
+              print(f'  - {n}')
+          "
+
+      - name: Commit & force push
+        run: |
+          git add -A
+          if git diff --cached --quiet; then
+            echo "No changes"
+          else
+            git commit -m "fix: strip git-subdir plugins for CLI v2.1.x compatibility"
+            git push --force origin main
+          fi

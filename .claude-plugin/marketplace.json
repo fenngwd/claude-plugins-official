@@ -1,7 +1,7 @@
 {
   "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
-  "name": "claude-plugins-official",
-  "description": "Directory of popular Claude Code extensions including development tools, productivity plugins, and MCP integrations",
+  "name": "cc-plugins-compat",
+  "description": "Community-maintained fork with git-subdir plugins stripped for older CLI versions",
   "owner": {
     "name": "Anthropic",
     "email": "support@anthropic.com"
@@ -30,18 +30,6 @@
       "homepage": "https://github.com/anthropics/claude-plugins-public/tree/main/plugins/agent-sdk-dev"
     },
     {
-      "name": "ai-firstify",
-      "description": "AI-first project auditor and re-engineer based on the 9 design principles and 7 design patterns from the TechWolf AI-First Bootcamp",
-      "source": {
-        "source": "git-subdir",
-        "url": "techwolf-ai/ai-first-toolkit",
-        "path": "plugins/ai-firstify",
-        "ref": "main",
-        "sha": "7f18e11d694b9ae62ea3009fbbc175f08ae913df"
-      },
-      "homepage": "https://ai-first.techwolf.ai"
-    },
-    {
       "name": "ai-plugins",
       "description": "Set up endorctl and use Endor Labs to scan, prioritize, and fix security risks across your software supply chain",
       "source": {
@@ -60,18 +48,6 @@
         "sha": "d7fa8b8e192680d9a26c1a5dcaead7cf5cdb7139"
       },
       "homepage": "https://github.com/AikidoSec/aikido-claude-plugin"
-    },
-    {
-      "name": "amazon-location-service",
-      "description": "Guide developers through adding maps, places search, geocoding, routing, and other geospatial features with Amazon Location Service, including authentication setup, SDK integration, and best practices.",
-      "category": "location",
-      "source": {
-        "source": "git-subdir",
-        "url": "https://github.com/awslabs/agent-plugins.git",
-        "path": "plugins/amazon-location-service",
-        "ref": "main"
-      },
-      "homepage": "https://github.com/awslabs/agent-plugins"
     },
     {
       "name": "asana",
@@ -134,18 +110,6 @@
       "category": "security",
       "source": "./external_plugins/autofix-bot",
       "homepage": "https://github.com/anthropics/claude-plugins-public/tree/main/external_plugins/autofix-bot"
-    },
-    {
-      "name": "aws-serverless",
-      "description": "Design, build, deploy, test, and debug serverless applications with AWS Serverless services.",
-      "category": "development",
-      "source": {
-        "source": "git-subdir",
-        "url": "https://github.com/awslabs/agent-plugins.git",
-        "path": "plugins/aws-serverless",
-        "ref": "main"
-      },
-      "homepage": "https://github.com/awslabs/agent-plugins"
     },
     {
       "name": "brightdata-plugin",
@@ -346,18 +310,6 @@
       "homepage": "https://github.com/astronomer/agents"
     },
     {
-      "name": "deploy-on-aws",
-      "description": "Deploy applications to AWS with architecture recommendations, cost estimates, and IaC deployment.",
-      "category": "deployment",
-      "source": {
-        "source": "git-subdir",
-        "url": "https://github.com/awslabs/agent-plugins.git",
-        "path": "plugins/deploy-on-aws",
-        "ref": "main"
-      },
-      "homepage": "https://github.com/awslabs/agent-plugins"
-    },
-    {
       "name": "discord",
       "description": "Discord messaging bridge with built-in access control. Manage pairing, allowlists, and policy via /discord:access.",
       "category": "productivity",
@@ -541,18 +493,6 @@
       "homepage": "https://github.com/anthropics/claude-plugins-public/tree/main/external_plugins/greptile"
     },
     {
-      "name": "helius",
-      "description": "Build on Solana with Helius — live blockchain tools, expert coding patterns, and autonomous account signup",
-      "source": {
-        "source": "git-subdir",
-        "url": "helius-labs/core-ai",
-        "path": "helius-plugin",
-        "ref": "main",
-        "sha": "05ea4d1128d46618266bbcc23a5e7019c57be0d6"
-      },
-      "homepage": "https://www.helius.dev/docs"
-    },
-    {
       "name": "hookify",
       "description": "Easily create custom hooks to prevent unwanted behaviors by analyzing conversation patterns or from explicit instructions. Define rules via simple markdown files.",
       "author": {
@@ -655,19 +595,6 @@
       "homepage": "https://github.com/anthropics/claude-plugins-public/tree/main/plugins/learning-output-style"
     },
     {
-      "name": "legalzoom",
-      "description": "Attorney guidance and legal tools for business and personal needs. AI-powered document review identifies critical risks and important clauses, advises when to engage an attorney, and routes to LegalZoom's network when professional expertise is needed.",
-      "category": "productivity",
-      "source": {
-        "source": "git-subdir",
-        "url": "legalzoom/claude-plugins",
-        "path": "plugins/legalzoom",
-        "ref": "main",
-        "sha": "f9fd8a0ca6e1421bc1aacb113a109663a7a6f6d8"
-      },
-      "homepage": "https://www.legalzoom.com/"
-    },
-    {
       "name": "linear",
       "description": "Linear issue tracking integration. Create issues, manage projects, update statuses, search across workspaces, and streamline your software development workflow with Linear's modern issue tracker.",
       "category": "productivity",
@@ -727,18 +654,6 @@
       "homepage": "https://github.com/microsoftdocs/mcp"
     },
     {
-      "name": "migration-to-aws",
-      "description": "Assess current cloud provider usage and billing to estimate and compare AWS services and pricing, with recommendations for migration or continued use of current provider.",
-      "category": "migration",
-      "source": {
-        "source": "git-subdir",
-        "url": "https://github.com/awslabs/agent-plugins.git",
-        "path": "plugins/migration-to-aws",
-        "ref": "main"
-      },
-      "homepage": "https://github.com/awslabs/agent-plugins"
-    },
-    {
       "name": "mintlify",
       "description": "Build beautiful documentation sites with Mintlify. Convert non-markdown files into properly formatted MDX pages, add and modify content with correct component use, and automate documentation updates.",
       "category": "development",
@@ -759,19 +674,6 @@
         "sha": "c47079f65e88a113c52d1ce0618684cef300246c"
       },
       "homepage": "https://www.mongodb.com/docs/mcp-server/overview/"
-    },
-    {
-      "name": "neon",
-      "description": "Manage your Neon projects and databases with the neon-postgres agent skill and the Neon MCP Server.",
-      "category": "database",
-      "source": {
-        "source": "git-subdir",
-        "url": "neondatabase/agent-skills",
-        "path": "plugins/neon-postgres",
-        "ref": "main",
-        "sha": "54d7a9db2ddd476f84d5d1fd7bac323907858a8b"
-      },
-      "homepage": "https://github.com/neondatabase/agent-skills/tree/main/plugins/neon-postgres"
     },
     {
       "name": "netlify-skills",
@@ -1014,19 +916,6 @@
       "homepage": "https://github.com/qodo-ai/qodo-skills.git"
     },
     {
-      "name": "railway",
-      "description": "Deploy and manage apps, databases, and infrastructure on Railway. Covers project setup, deploys, environment configuration, networking, troubleshooting, and monitoring.",
-      "category": "deployment",
-      "source": {
-        "source": "git-subdir",
-        "url": "railwayapp/railway-skills",
-        "path": "plugins/railway",
-        "ref": "main",
-        "sha": "d52f3741a6a33a3191d6138eb3d6c3355cb970d1"
-      },
-      "homepage": "https://docs.railway.com/ai/claude-code-plugin"
-    },
-    {
       "name": "ralph-loop",
       "description": "Interactive self-referential AI loops for iterative development, implementing the Ralph Wiggum technique. Claude works on the same task repeatedly, seeing its previous work, until completion.",
       "author": {
@@ -1149,17 +1038,6 @@
       "homepage": "https://github.com/anthropics/claude-plugins-public/tree/main/plugins/security-guidance"
     },
     {
-      "name": "semgrep",
-      "description": "Semgrep catches security vulnerabilities in real-time and guides Claude to write secure code from the start.",
-      "category": "security",
-      "source": {
-        "source": "git-subdir",
-        "url": "https://github.com/semgrep/mcp-marketplace.git",
-        "path": "plugin"
-      },
-      "homepage": "https://github.com/semgrep/mcp-marketplace.git"
-    },
-    {
       "name": "sentry",
       "description": "Sentry error monitoring integration. Access error reports, analyze stack traces, search issues by fingerprint, and debug production errors directly from your development environment.",
       "category": "monitoring",
@@ -1257,18 +1135,6 @@
       ]
     },
     {
-      "name": "stripe",
-      "description": "Stripe development plugin for Claude",
-      "category": "development",
-      "source": {
-        "source": "git-subdir",
-        "url": "stripe/ai",
-        "path": "providers/claude/plugin",
-        "ref": "main"
-      },
-      "homepage": "https://github.com/stripe/ai/tree/main/providers/claude/plugin"
-    },
-    {
       "name": "sumup",
       "description": "SumUp payment integrations across terminal and online checkout flows. Build Android and iOS POS apps with SumUp card readers, online checkout with server SDKs and the checkout widget, and control card readers remotely via Cloud API.",
       "category": "development",
@@ -1364,32 +1230,6 @@
       }
     },
     {
-      "name": "ui5",
-      "description": "SAPUI5 / OpenUI5 plugin for Claude. Create and validate UI5 projects, access API documentation, run UI5 linter, get development guidelines and best practices for UI5 development.",
-      "category": "development",
-      "source": {
-        "source": "git-subdir",
-        "url": "UI5/plugins-claude",
-        "path": "plugins/ui5",
-        "ref": "main",
-        "sha": "5070dfc1cef711d6efad40beb43750027039d71f"
-      },
-      "homepage": "https://github.com/UI5/plugins-claude"
-    },
-    {
-      "name": "ui5-typescript-conversion",
-      "description": "SAPUI5 / OpenUI5 plugin for Claude. Convert JavaScript based UI5 projects to TypeScript.",
-      "category": "development",
-      "source": {
-        "source": "git-subdir",
-        "url": "UI5/plugins-claude",
-        "path": "plugins/ui5-typescript-conversion",
-        "ref": "main",
-        "sha": "5070dfc1cef711d6efad40beb43750027039d71f"
-      },
-      "homepage": "https://github.com/UI5/plugins-claude"
-    },
-    {
       "name": "vercel",
       "description": "Vercel deployment platform integration. Manage deployments, check build status, access logs, configure domains, and control your frontend infrastructure directly from Claude Code.",
       "category": "deployment",
@@ -1429,19 +1269,6 @@
         "sha": "e4d23c3bffdcdb7f70134ab6a1a110258ff75cfd"
       },
       "homepage": "https://developer.wordpress.com/wordpress-com-claude-code-plugin/"
-    },
-    {
-      "name": "zapier",
-      "description": "Connect 8,000+ apps to your AI workflow. Discover, enable, and execute Zapier actions directly from your client.",
-      "category": "productivity",
-      "source": {
-        "source": "git-subdir",
-        "url": "zapier/zapier-mcp",
-        "path": "plugins/zapier",
-        "ref": "main",
-        "sha": "b93007e9a726c6ee93c57a949e732744ef5acbfd"
-      },
-      "homepage": "https://github.com/zapier/zapier-mcp/tree/main/plugins/zapier"
     }
   ]
 }
